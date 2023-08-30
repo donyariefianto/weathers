@@ -18,7 +18,7 @@ exports.index = async (req, res) => {
         
         let bmkg_earthquake2 = await axios({method: 'get',url: 'https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json',headers: { }});
         let result = await axios({method: 'get',url: `http://202.90.198.212/logger/logfile/logARG-${tgl}.txt`,headers: { }});
-        let bmkg_weather = await axios({method: 'get',url: `https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/${area}`,headers: { }});
+        let bmkg_weather = await axios({method: 'get',url: `https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/${area}`,headers: { "Accept-Encoding": "gzip,deflate,compress" } });
         bmkg_earthquake2 = bmkg_earthquake2.data;
         result = result.data;
         bmkg_weather = bmkg_weather.data;
