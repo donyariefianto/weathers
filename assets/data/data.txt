@@ -83,7 +83,7 @@ try {
         tanggal = ("0" + d.getDate()).slice(-2)
         tanggalBesok=("0" + checkTomorrowDate.getDate()).slice(-2)
     } else {
-        tanggalBesok=( checkTomorrowDate.getDate()).slice(-2)
+        tanggalBesok=( "0" + checkTomorrowDate.getDate()).slice(-2)
         tanggal = d.getDate()
     }
     if ((d.getMonth() + 1) < 10) {
@@ -91,7 +91,8 @@ try {
         bulanBesok=("0" + (checkTomorrowDate.getMonth() + 1)).slice(-2)
     } else {
         bulan = d.getMonth() + 1
-        bulanBesok=( (checkTomorrowDate.getMonth() + 1)).slice(-2)
+        bulanBesok=( "0" +(checkTomorrowDate.getMonth() + 1)).slice(-2)
+        
     }
     if (data_all.data.logger.datetime && data_all.data.logger.datetime.slice(0, 8) === `${tanggal}${bulan}${d.getFullYear()}`) {
         list_data = !0, logger = !0;
